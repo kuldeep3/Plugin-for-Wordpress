@@ -28,10 +28,12 @@ class KuldeepPlugin
 		add_action('init', array($this, 'custom_post_type') );
 	}
 	function activate() {
+		$this->custom_post_type();
 		flush_rewrite_rules();
+
 	}
 	function deactivate() {
-		
+	flush_rewrite_rules();	
 	}
 	function uninstall() {
 		
